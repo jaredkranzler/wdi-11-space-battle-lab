@@ -20,82 +20,72 @@ console.log("Lands not a myth, I've seen it")
 
 // You lose the game if you are destroyed.
 
-
-
-
-
-
+//user
 const myShip = {
   hull: 20,
   firepower: 5,
-  accuracy: .7
-  attackAlien(attack) {
-    if (attack) {
-       alienShips. -= 5;
+  accuracy: .7,
+  //action
+  attackAlien(){
+    game.alienShips[i].hull -= 5;
     console.log('Direct hit!');
-    }
-    if (hull === 0){
-      console.log("Alien scum destroyed");
-      confirm("continue or retreat?");
-    }
-    if (confirm === false){
-      console.log("retreat!"); 
-      console.log("game over")
-    }
+  }
+};
+//random between two numbers
+function getRandom(x, y) {
+  return Math.floor(Math.random()*(y - x +1) + x);
+ }
+ //Alien profile
+class Alien {
+  //traits
+  constructor(hull, firepower, accuracy){
+    this.hull = 3;
+    this.firepower = 3;
+    this.accuracy = 2;
+  }
+  //action
+  attackHuman () {
+       myShip.hull -= 3;
+    console.log('you were hit!');
   }
 }
 
-class Alien {
-  constructor(hull, firepower, accuracy){
-    this.hull: 3;
-    this.firepower: 2;
-    this.accuracy: .6;
-  }
-  attackHuman () {
-       alienShips. -= 5;
-    console.log('you were hit!');
-    }
-    if (hull === 0){
-      console.log("Die human rebel scum");
-      console.log("Game Over");
-    }
-  }
-}
+const alienShip0 = new Alien ();
+const alienShip1 = new Alien ();
+const alienShip2 = new Alien ();
+const alienShip3 = new Alien ();
+const alienShip4 = new Alien ();
+const alienShip5 = new Alien ();
+const alienShip = [
+alienShip0,
+alienShip1,
+alienShip2,
+alienShip3,
+alienShip4,
+alienShip5];
 
 const game = {
-  alienShips: [{}, {}],
+  alienShips: [],
   myShip: [],
   start() {
     for (i = 0; i < 6; i++){
-      if (alienShip[i].hull === 0)
-      this.alienShips.push(alienShip[i])  
-      if (confirm === true)
-      this.alienShips.push(alienShip[i])
-    } else console.log("game over")
-    // for(6) {
-    //   new ship
-    //   push new ship into this.alienShips      
-    // }
+      this.alienShips.push(alienShip[0]);
+      if (alienShips[i].hull === 0){
+      console.log("Alien scum destroyed");
+      this.alienShips.splice(0, 1);
+      this.alienShips.push(alienShip[i]);
+      console.log("hear comes another one!");
+      }if (alienShips == 0){
+      Console.log("You saved the earth!")
+      }if (confirm === false){
+      console.log("retreat!"); 
+      console.log("game over")
+      } else if (myShip.hull === 0){
+      console.log("Die human rebel scum");
+      console.log("Game Over");
+      } else console.log("game over");
+    }
   }
 }
-
-const alienShip0 = new Alien (4, 3, .6),
-const alienShip1 = new Alien (4, 3, .6),
-const alienShip2 = new Alien (4, 3, .6),
-const alienShip3 = new Alien (4, 3, .6),
-const alienShip4 = new Alien (4, 3, .6),
-const alienShip5 = new Alien (4, 3, .6)
-const alienShip = [
-alienShip0
-alienShip1 
-alienShip2
-alienShip3
-alienShip4
-alienShip5];
-
-
-
-
-
 
 
